@@ -1,7 +1,7 @@
 ﻿<!DOCUMENT html>
 <html>
 <head>
-<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
 
 	var s1 = '11974863911';		// true tem 11 digitos
@@ -32,7 +32,6 @@
 	function fix_phone(phone){
 		if (!validate_phone(phone)){
 			return phone.replace("11","119");
-			alert('phone is' + p);
 		}
 	}
 	//console.log('validate_phone( "'+ s1 + '" ): ' + validate_phone(s1))
@@ -45,15 +44,24 @@
 	//console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
 	//console.log('validate_phone( "'+ s8 + '" ): ' + validate_phone(s8))
 
-	console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
-	console.log('fix_phone( "'+ s7 + '" ): ' + fix_phone(s7))
+	//console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
+	//console.log('fix_phone( "'+ s7 + '" ): ' + fix_phone(s7))
 
+	$(document).ready(function(){
+		$('form').submit(function(){
+			var value = $('#number_phone').val();
+			fixed_value = fix_phone(value);
+			alert(value + ' -> ' + fixed_value);
+		});
+		return false;
+	});
+	
 </script>
 
 </head>
 <body>
 
-	<form method="post" onSubmit="fix_phone()">
+	<form>
 		Phone: <input type="phone" name="number_phone" id="number_phone" /><br />
 		<input type="submit" value="Enviar" />
 	</form>
