@@ -11,19 +11,25 @@
     var s5 = '1170001111';		// true nextel
         
     var s6 = '1174863911'; 		// false nao tem 11 digitos
-    var s7 = '122117900';  		// false nao e ddd 11
+    var s7 = '1221179000';  		// false nao e ddd 11
  
-//function validate_ddd(ddd){
-//	if (d("11")){
+
 
 	    function validate_phone(phone){
-	        if (phone.length == 11 || phone.indexOf('1179') == 0 || phone.indexOf('1178') == 0 || phone.indexOf('1177') == 0 || phone.indexOf('1170') == 0) {
-	            return true;
-	        }
-	        else {
-	            return false;
-	        }
-	    }
+		
+			if (phone.indexOf('11') == 0) {
+		
+				if (phone.length == 11 || phone.indexOf('1179') == 0 || phone.indexOf('1178') == 0 || phone.indexOf('1177') == 0 || phone.indexOf('1170') == 0) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else{
+				return true;
+			}
+		}
 	
 	    function fix_phone(phone){
 	        if (!validate_phone(phone)){
@@ -34,8 +40,6 @@
 		
 	        }
 	    } 
-//	}
-//}
 
 
 //console.log('validate_ddd( "'+ s6 + '" ): ' + validate_ddd(s6))
@@ -47,7 +51,7 @@
 //console.log('validate_phone( "'+ s5 + '" ): ' + validate_phone(s5))
 
 console.log('validate_phone( "'+ s6 + '" ): ' + validate_phone(s6))
-//console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
+console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
 
 
 console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
