@@ -4,12 +4,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
 
+	var s10 = '1179000000';       // true nextel
+	var s9 = '1174863911';       // false nao tem 11 digitos
+
+
     var s1 = '(11) 974863911';      // true tem 11 digitos
     var s2 = '(11) 79000000';       // true nextel
     var s3 = '(11) 78001111';       // true nextel
     var s4 = '(11) 77001111';       // true nextel
     var s5 = '(11) 70001111';       // true nextel
-    var s6 = '(12) 21179000';       // true DDD não é 11
+    
+	var s6 = '(12) 21179000';       // true DDD não é 11
     var s7 = '(11) 74863911';       // false nao tem 11 digitos
     var s8 = '(11) 88486391';       // false2 nao tem 11 digitos
 
@@ -30,10 +35,12 @@
     }
 
     function fix_phone(phone){
-        if (!validate_phone(phone)){
-            return phone.replace("\(11\) ","\(11\) 9");
+        var unmasked_phone = phone.replace("\(", "").replace("\)", "").replace(" ", "");
+		var masked_phone = '(' + unmasked_phone.substring(0,2) + ") " + unmasked_phone.substring(2,14);
+		if (!validate_phone(masked_phone)){
+            return masked_phone.replace("\(11\) ", "\(11\) 9");
         }else{
-            return phone;
+            return masked_phone;
         }
     }
     console.log('validate_phone( "'+ s1 + '" ): ' + validate_phone(s1))
@@ -45,9 +52,15 @@
     console.log('validate_phone( "'+ s6 + '" ): ' + validate_phone(s6))
     console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
     console.log('validate_phone( "'+ s8 + '" ): ' + validate_phone(s8))
-
+	
     console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
     console.log('fix_phone( "'+ s7 + '" ): ' + fix_phone(s7))
+	
+	console.log('validate_phone( "'+ s9 + '" ): ' + validate_phone(s9))
+    console.log('validate_phone( "'+ s10 + '" ): ' + validate_phone(s10))
+	
+	console.log('fix_phone( "'+ s9 + '" ): ' + fix_phone(s9))
+    console.log('fix_phone( "'+ s10 + '" ): ' + fix_phone(s10))
 
     $(document).ready(function(){
         $('form').submit(function(){
