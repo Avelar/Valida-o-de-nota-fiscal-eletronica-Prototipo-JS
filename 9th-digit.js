@@ -1,4 +1,4 @@
-function validate_phone(phone){
+function validade_phone_number(phone){
 
     if (phone.indexOf("\(11\)") == 0){
 
@@ -14,10 +14,10 @@ function validate_phone(phone){
     }
 }
 
-function fix_phone(phone){
+function fix_phone_number(phone){
     var unmasked_phone = phone.replace("\(", "").replace("\)", "").replace(" ", "");
     var masked_phone = '(' + unmasked_phone.substring(0,2) + ") " + unmasked_phone.substring(2,14);
-    if (!validate_phone(masked_phone)){
+    if (!validade_phone_number(masked_phone)){
         return masked_phone.replace("\(11\) ", "\(11\) 9");
     }else{
         return masked_phone;
