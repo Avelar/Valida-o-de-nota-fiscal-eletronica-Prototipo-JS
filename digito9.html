@@ -15,9 +15,9 @@
 
     function validate_phone(phone){
 
-        if (phone.indexOf('11') == 0){
+        if (phone.indexOf("\(11\)") == 0){
 
-            if (phone.length == 11 || phone.indexOf('1179') == 0 || phone.indexOf('1178') == 0 || phone.indexOf('1177') == 0 || phone.indexOf('1170') == 0) {
+            if (phone.length == "\(11\)" || phone.indexOf("\(11\) 79") == 0 || phone.indexOf("\(11\) 78") == 0 || phone.indexOf("\(11\) 77") == 0 || phone.indexOf("\(11\) 70") == 0) {
                 return true;
             }
             else {
@@ -31,23 +31,23 @@
 
     function fix_phone(phone){
         if (!validate_phone(phone)){
-            return phone.replace("11","119");
+            return phone.replace("\(11\) ","\(11\) 9");
         }else{
             return phone;
         }
     }
-    //console.log('validate_phone( "'+ s1 + '" ): ' + validate_phone(s1))
-    //console.log('validate_phone( "'+ s2 + '" ): ' + validate_phone(s2))
-    //console.log('validate_phone( "'+ s3 + '" ): ' + validate_phone(s3))
-    //console.log('validate_phone( "'+ s4 + '" ): ' + validate_phone(s4))
-    //console.log('validate_phone( "'+ s5 + '" ): ' + validate_phone(s5))
+    console.log('validate_phone( "'+ s1 + '" ): ' + validate_phone(s1))
+    console.log('validate_phone( "'+ s2 + '" ): ' + validate_phone(s2))
+    console.log('validate_phone( "'+ s3 + '" ): ' + validate_phone(s3))
+    console.log('validate_phone( "'+ s4 + '" ): ' + validate_phone(s4))
+    console.log('validate_phone( "'+ s5 + '" ): ' + validate_phone(s5))
 
-    //console.log('validate_phone( "'+ s6 + '" ): ' + validate_phone(s6))
-    //console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
-    //console.log('validate_phone( "'+ s8 + '" ): ' + validate_phone(s8))
+    console.log('validate_phone( "'+ s6 + '" ): ' + validate_phone(s6))
+    console.log('validate_phone( "'+ s7 + '" ): ' + validate_phone(s7))
+    console.log('validate_phone( "'+ s8 + '" ): ' + validate_phone(s8))
 
-    //console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
-    //console.log('fix_phone( "'+ s7 + '" ): ' + fix_phone(s7))
+    console.log('fix_phone( "'+ s6 + '" ): ' + fix_phone(s6))
+    console.log('fix_phone( "'+ s7 + '" ): ' + fix_phone(s7))
 
     $(document).ready(function(){
         $('form').submit(function(){
