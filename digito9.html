@@ -32,6 +32,8 @@
 	function fix_phone(phone){
 		if (!validate_phone(phone)){
 			return phone.replace("11","119");
+		}else{
+			return phone;
 		}
 	}
 	//console.log('validate_phone( "'+ s1 + '" ): ' + validate_phone(s1))
