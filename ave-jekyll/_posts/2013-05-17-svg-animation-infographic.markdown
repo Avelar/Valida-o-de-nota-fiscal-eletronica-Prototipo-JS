@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Infográfico animado com SVG"
 date:   2013-05-17 18:55:19
-categories: jekyll update
+categories: jekyll update svg css jquery
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
