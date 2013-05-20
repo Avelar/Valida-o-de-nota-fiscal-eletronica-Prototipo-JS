@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+
 /*****************************************************************************/
 /*
 /* Common
@@ -19,10 +21,19 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
 
-h1 { margin-bottom: 1em; }
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Hammersmith One', sans-serif;
+	font-weight:700;
+	font-size: 100%; }
+
+h1 { 
+	margin-bottom: 1em; 
+}
+h2 {
+	font-size:32px;
+}
+
 p { margin: 1em 0; }
 
 a         { color: #45b7eb; }
@@ -95,8 +106,15 @@ ul.posts span {
   color: #000;
 }
 
+.meta_wrapper {
+	font:11px;
+	color:#999;
+	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
+}
+
 .site .meta {
-  color: #aaa;
+	color: #aaa;
 }
 
 .site .footer {
@@ -128,9 +146,20 @@ ul.posts span {
 
 /*****************************************************************************/
 /*
-/* Posts
+/* Posts and Tag List
 /*
 /*****************************************************************************/
+
+a.tag_list_link {
+	font-size:11px;
+	color:#999;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+a.tag_list_link:hover {
+	color:#000;
+}
 
 /* standard */
 #post pre {
