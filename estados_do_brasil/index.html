@@ -1,0 +1,71 @@
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>(JS) Ajustar pronomes de estados brasileiros para páginas dinâmicas</title>
+<!-- CSS -->
+<link rel="stylesheet" href="../assets/css/default.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+
+// Para páginas dinâmicas com nome dos estados Brasileiros, subistitui os pronomes em, no, na...
+// Exemplo em Bahia por na Bahia
+
+// JEITO 01  DE FAZER:
+
+// $('#estados').contents().filter(function() {
+//         return this.nodeType == 3
+//     }).each(function(){
+//         this.textContent = this.textContent.replace(/em bahia/gi, 'na Bahia');
+//         this.textContent = this.textContent.replace(/em rio grande do sul/gi, 'no Rio Grande do Sul');
+//         this.textContent = this.textContent.replace(/em rio de janeiro/gi, 'no Rio de Janeiro');
+//         this.textContent = this.textContent.replace(/em mato grosso/gi, 'no Mato Grosso');
+//         this.textContent = this.textContent.replace(/em mato grosso do sul/gi, 'no Mato Grosso do Sul');
+//     });
+
+
+// JEITO 02  DE FAZER:
+// gi => g:global e i:case sensitive
+    var stateReplace = {
+        'na Bahia': /em bahia/gi,
+        'no Rio de Janeiro': /em rio de janeiro/gi,
+        'no Rio Grande do Sul': /em rio grande do sul/gi,
+        'no Rio Grande do Norte': /em rio grande do norte/gi,
+        'no Mato Grosso do Sul': /em mato grosso do sul/gi,
+        'no Mato Grosso': /em mato grosso/gi
+    };
+    var el = $("#estados"),
+        html = el.html();
+    for (var key in stateReplace) {
+        html = html.replace(stateReplace[key], key);
+    }
+    el.html(html);
+	});
+</script>
+
+<body>
+  <div id="container">
+    <h1>Ajustar pronomes de estados brasileiros</h1>
+    <h2> javascript, jquery</h2>
+
+    <div id="estados">
+      <p>
+        em bahia,
+        Em bahia,
+        Em Bahia
+      </p>
+      <p>
+        em rio grande do sul,
+        Em Rio Grande do Sul
+      </p>
+      <p>
+        em rio de janeiro,
+        Em Rio de janeiro,
+        em rio de...
+      </p>
+    </div>
+  </div>
+</body>
+</html>
