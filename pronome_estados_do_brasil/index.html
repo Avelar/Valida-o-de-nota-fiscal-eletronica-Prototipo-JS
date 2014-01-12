@@ -43,6 +43,15 @@
     }
     el.html(html);
 	});
+
+// jeito 3 de deletar um texto
+$(function () {
+    $(".testes:contains('DeleteTexta')").contents().filter(function () {
+        return (this.nodeType == 3 && $.trim(this.nodeValue) == 'DeleteTexta');
+    }).remove();
+});
+
+
 </script>
 
 <body>
@@ -67,5 +76,13 @@
       </p>
     </div>
   </div>
+
+
+  <div class="testes">
+DeleteTexta
+<span>Something text</span>
+<div>Something span inner text </div>
+</div>
+
 </body>
 </html>
