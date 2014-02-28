@@ -13,9 +13,11 @@
     }
 
     .header {
-      background-size:cover;
-      background-position:top center;
-      background-attachment:fixed;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+              background-size:cover; /* Full Page Background Image */
+      background-position:center;
+      background-attachment:fixed; /* Fixed Background Image good scroll sensation*/
       display:block;
       margin-bottom:5em;
       min-height:800px;
@@ -23,7 +25,7 @@
     }
 
     .header:before{
-      background:rgba(0,0,0,.3);
+      background:rgba(0,0,0,.1); /* degrade from top to bottom, on the image*/
       bottom:0;
       content:" ";
       display:block;
@@ -35,7 +37,7 @@
     }
 
     .header {
-      background-image: url('wolf.jpg');
+      background-image: url('http://farm5.staticflickr.com/4147/5057066939_c714633fb0.jpg');
     }
 
     .title {
@@ -89,6 +91,8 @@
       </h1>
       <p>
         Medium style inspiration <3
+        <br />
+        foto: by Ali Veiga
       </p>
     </div>
   </section>
