@@ -1,8 +1,6 @@
 ## Validação de nota fiscal eletrônica com javaScript (Invoice Validation)
 
-No ano passado precisamos validar a chave de 44 dígitos da NE-e Brasileira. Então resolvi criar uma função com JS para validação baseado na estrutura da nf-e.
-
-Primeiramente desenvolvemos uma função bem verbosa pouco segura e nada escaláve em Javascript apenas para testarmos nossas hispóteses uma _feature_ de 1 dia :D, e mais tarde um algoritmo escalável.
+No ano passado precisamos validar a chave de 44 dígitos da NF-e Brasileira. Então resolvi criar uma função em javaScript bem verbosa e nada escalável para testarmos nossas hipóteses uma _feature_ de 1 dia que ajudou bastante na época, e mais tarde o time de back-end construiu um algoritmo escalável mais seguro que o JS obviamente.
 
 ### Conceito - como é construida a NF-e:
 … 
