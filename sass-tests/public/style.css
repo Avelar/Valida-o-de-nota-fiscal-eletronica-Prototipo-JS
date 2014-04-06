@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*================================================
+*  =SASS tests
+=================================================*/
+/*
+  Definindo o projeto:
+
+  - Baseline e o tamanho fonte base
+  - Analisar o grid
+  - Browser support (Chrome, Firefox, Safari, IE8+, iOS)
+
+  Na hora de arquitetar o front-end, lembre-se que ele deve ter:
+
+  - Alta performance client-side
+  - Interface facilmente modificável
+  - Componentes portáveis entre diferentes aplicações
+  - Bulletproof Web Design
+  - Responsive (ou pelo menos responsive-ready de início)
+  - Baixa barreira de entrada para outros desenvolvedores
+
+  Ferramentas utilizadas para este projeto:
+
+  - Ruby e RubyGems (https://www.ruby-lang.org/)
+  - SASS (gem install sass)
+  - Compass (gem install compass)
+  - Sass Globbing (gem install sass-globbing)
+
+  Outras ferramentas que costumo utilizar:
+
+  - Modernizr (http://modernizr.com/)
+  - Selectivzr (http://selectivizr.com/)
+*/
+                /* A ordem do carregamento é importante aqui
+@import "base/variables";
+@import "base/functions";
+@import "base/mixins";
+@import "base/helpers";
+@import "core/reset";
+@import "core/basic";
+@import "core/typography";
+@import "core/icons";
+@import "core/grid";
+@import "core/forms";
+@import "core/buttons";
+
+@import "layout/*";
+@import "ui/*";
+@import "modules/*";
+*/
