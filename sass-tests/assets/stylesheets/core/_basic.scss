@@ -1,0 +1,23 @@
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body,
+select {
+  color: $TEXT_COLOR;
+}
+
+/*=================================
+*  =Links
+*=================================*/
+
+a {
+  color: $LINK_COLOR;
+  text-decoration: underline;
+  
+  &:focus {
+    outline: thin dotted;
+  }
+}
