@@ -72,22 +72,21 @@ h1, h2, h3, h4 {
 
 .svg .header-logo {
   background: url(../images/logo-ave.svg)no-repeat top left;
-/*  background-size: 100px 82px;*/
+	float: left;
 	display: block;
 	height: 306px;
 	width: 330px;
-	float: left;
 }
 
-/*.header-logo,
+.header-logo,
 .no-svg .header-logo {
-	background: url(assets/images/logo-ave.png);
-  background-size: 100px 82px;
+	background: url(../images/logo-ave.png);
+	background-size: 330px 300px;
 	display: block;
-	height: 82px;
-  text-indent: -9999px;
-	width: 100px;
-}*/
+	float: left;
+	height: 306px;
+	width: 330px;
+}
 
 .header-logo-content {
 	position: absolute;
