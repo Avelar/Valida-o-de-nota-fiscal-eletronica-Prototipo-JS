@@ -1,3 +1,30 @@
 /*
 	Stylesheets
 */
+
+header,
+section,
+footer {
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+.svg .header-logo {
+  background: url(../images/logo-ave.svg)no-repeat top left;
+/*  background-size: 100px 82px;*/
+	display: block;
+	height: 306px;
+	width: 340px;
+	float: left;
+}
+
+/*.header-logo,
+.no-svg .header-logo {
+	background: url(assets/images/logo-ave.png);
+  background-size: 100px 82px;
+	display: block;
+	height: 82px;
+  text-indent: -9999px;
+	width: 100px;
+}*/
+

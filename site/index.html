@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>avelarfortunato.com</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- favicon.ico and apple-touch-icon(s) -->
+
+        <link rel="stylesheet" href="assets/stylesheets/style.css">
+    </head>
+    <body>
+    	<header class="header">
+    		<div class="header-logo">
+    			<div class="header-logo-ave">
+    				Ave
+    			</div>
+    			<div class="header-logo-lar">
+    				Lar
+    			</div>
+    		</div>
+				<div class="header-description">
+					Avelar Fortunato é desenvolvedor front-end, web designer, email engineer e ocasionalmente músico e escalador. Acredita em código limpo, escalável, em construção de projetos socialmente significativos, e que a beleza e função podem estar presente em nosso dia-a-dia
+				</div>
+    	</header>
+    	
+    	<section class="section">
+    	</section>
+
+    	<footer class="footer">
+			</footer>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+			<script src="assets/javascript"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					function supportsSVG() {
+						return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;
+					}
+					if (supportsSVG()) {
+						document.documentElement.className += ' svg';
+					} else {
+						document.documentElement.className += ' no-svg';
+					}
+	      });
+
+				function semSpam(usuario,domino) {
+					locationstring = 'mailto:' + usuario + '@' + domino; 
+					window.location = locationstring;
+				}
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-23660227-1']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+			</script>
+    </body>
+</html>
