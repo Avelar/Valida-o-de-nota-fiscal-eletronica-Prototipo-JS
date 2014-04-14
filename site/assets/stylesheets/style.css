@@ -52,11 +52,11 @@ table {
 	avelarfortunato.com
 */
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:700);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400);
 
 body {
-	font: 1em/1.5 'Droid Sans', 'Helvetica Neue' Helvetica,  sans-serif;
+	font: 1em/1.5 'Ubuntu', 'Helvetica Neue' Helvetica,  sans-serif;
+	font-weight: 400;
 }
 
 header,
@@ -67,7 +67,12 @@ footer {
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Ubuntu', serif;
+}
+
+.header-description h1.h1-small {
+	display: inline;
+	font: 1em/1.5 'Ubuntu', 'Helvetica Neue' Helvetica,  sans-serif !important;
 }
 
 .svg .header-logo {
@@ -95,16 +100,16 @@ h1, h2, h3, h4 {
 
 .header-logo-ave {
 	background: #ffffff;
-	padding: 5px 25px;
+	padding: 0px 20px;
 }
 
 .header-logo-lar {
-	padding: 5px 25px;
+	padding: 0px 20px;
 }
 
 .header-logo-textt {
-	font: 2em/1.5 'Josefin Slab', serif;
-	font-weight: 700;
+	font: 2.3em/1.5 'Cardo', serif;
+	font-weight: 400;
 	float: left;
 }
 
