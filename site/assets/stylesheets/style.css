@@ -167,6 +167,31 @@ a:hover {
 	height: 40px;
 	margin-top: 100px;
 	text-align: center;
-	position:relative;
 	width: 100%;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	
+	.header-content .title { 
+		font-size: 2em;
+	}
+	.header,
+	.section,
+	.footer {
+		width: 85%;
+	}
+	.header {
+		padding-top: 40px;
+	}
+	.footer {
+
+	}
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.header,
+	.section,
+	.footer {
+		width: 85%;
+	}
 }
