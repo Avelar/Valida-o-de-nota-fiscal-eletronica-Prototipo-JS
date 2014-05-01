@@ -197,4 +197,9 @@ a.humans-txt-link {
 	.footer {
 		width: 85%;
 	}
+
+	.header-content .title{
+		font-size: 1.8em;
+		line-height: 1.5
+	}
 }
