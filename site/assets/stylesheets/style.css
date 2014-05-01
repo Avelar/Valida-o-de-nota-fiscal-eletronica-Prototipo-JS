@@ -1,7 +1,9 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/*================================================ 
+ * Reset
+ * http://meyerweb.com/eric/tools/css/reset/ 
+ * v2.0 | 20110126
+ * License: none (public domain)
+ *================================================*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,10 +49,10 @@ table {
 	border-spacing: 0;
 }
 
-/*
-	Stylesheets
-	avelarfortunato.com
-*/
+/*================================================
+ *	Stylesheets
+ *	Base and Layout
+ *================================================*/
 
 html, body {
 	height: 100%;
@@ -72,50 +74,6 @@ footer {
 header {
 	padding-top: 100px;
 }
-
-h1, h2 {
-	font-family: 'Lustria', serif;
-	line-height: 1.2;
-}
-
-h3 {
-	font-weight: 400;
-}
-
-hr {
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	height: 0;
-}
-
-hr {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 0;
-	border-top: 1px solid #eeeeee;
-}
-
-a {
-	color: #e14e2f;
-	display: inline-block;
-	text-decoration: none;
-	padding-bottom: 4px;
-	line-height: 0.5;
-	border-bottom: 1px dotted #e14e2f;
-	-webkit-transition: color 0.2s linear;
-		 -moz-transition: color 0.2s linear;
-					transition: color 0.2s linear;
-}
-
-a:hover {
-	color: #428bca;
-	border-bottom: 0;
-}
-
-.display-hidden {
-	display: none;
-}
-
 
 .header,
 .section,
@@ -146,8 +104,8 @@ a:hover {
 	float: left;
 }
 
-.nav .nav-link {
-	margin-left: 10px;
+.display-hidden {
+	display: none;
 }
 
 .section-title {
@@ -168,10 +126,65 @@ a:hover {
 	width: 100%;
 }
 
+/*================================================
+ *	typography
+ *================================================*/
+
+h1, h2 {
+	font-family: 'Lustria', serif;
+	line-height: 1.2;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eeeeee;
+}
+
+/*================================================
+ *	links and navegation
+ *================================================*/
+
+a {
+	color: #e14e2f;
+	display: inline-block;
+	text-decoration: none;
+	padding-bottom: 4px;
+	line-height: 0.5;
+	border-bottom: 1px dotted #e14e2f;
+	-webkit-transition: color 0.2s linear;
+		 -moz-transition: color 0.2s linear;
+					transition: color 0.2s linear;
+}
+
+a:hover {
+	color: #428bca;
+	border-bottom: 0;
+}
+
 a.humans-txt-link {
 	display: block;
 	border:0; 
 }
+
+.nav .nav-link {
+	margin-left: 10px;
+}
+
+/*================================================
+ *	Responsive
+ *================================================*/
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	
