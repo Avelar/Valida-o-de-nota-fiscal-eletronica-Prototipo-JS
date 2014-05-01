@@ -57,7 +57,8 @@ html, body {
 }
 
 body {
-	font: 1.3em/1.8 'Sorts Mill Goudy', serif;
+	font: 1.3em/1.8 'Lato', sans-serif;
+	font-weight: 300;
 	color: #37444a;
 }
 
@@ -72,9 +73,13 @@ header {
 	padding-top: 100px;
 }
 
-h1, h2, h3, h4 {
-	font-family: 'Sorts Mill Goudy', 'serif';
+h1, h2 {
+	font-family: 'Lustria', serif;
 	line-height: 1.2;
+}
+
+h3 {
+	font-weight: 400;
 }
 
 hr {
@@ -139,10 +144,6 @@ a:hover {
 	width: 120px;
 	border-color: #e14e2f;
 	float: left;
-}
-
-.nav {
-	font-weight: bold;
 }
 
 .nav .nav-link {

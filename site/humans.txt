@@ -7,16 +7,21 @@
 	Personal web site: Avelar Fortunato
 	Site: avelarfortunato.com
 	Twitter: @avelarfotunato
-	Location: Sao Paulo and Florianópolis island Brazil
+	Location: Sao Paulo and Florianopolis island Brazil
 				
-/* THANKS */							
-	My teachers: Lucas Húngaro and Daniel Hatkoff
-	My inspirations: Mariana and Gabe Rilich
+/* THANKS */
+	My teachers: Lucas Hungaro and Daniel Hatkoff
+	My inspirations: My Family, My Wife, Vitor Klein and Gabe Rilich
 	
+/* OTHER COOL PROJECTS */
+	http://www.ebs.fm
+	http://www.pitzi.com.br/pitzi-dude
+
+
 /* SITE */
 	Last update: 2014/27/04
 	Language: Portuguese, Brazil
 	Standards: (D)HTML, CSS(3)
 	Components: javaScript, jQuery
-	Services: apis.google.com, google.com/fonts
-	Software: Sublime Text2, Terminal, GitHub
+	Services: apis.google.com, google.com/fonts, GitHub
+	Software: Sublime Text2, Terminal
