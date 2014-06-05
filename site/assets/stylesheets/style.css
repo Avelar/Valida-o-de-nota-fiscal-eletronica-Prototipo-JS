@@ -182,6 +182,11 @@ a.humans-txt-link {
 	margin-left: 10px;
 }
 
+.no-link-style {
+	color: #37444a;
+	text-decoration: none;
+}
+
 /*================================================
  *	Responsive
  *================================================*/
