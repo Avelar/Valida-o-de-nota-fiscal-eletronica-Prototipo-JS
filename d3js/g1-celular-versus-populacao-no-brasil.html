@@ -38,14 +38,13 @@
 		O Brasil tem mais celulares que pessoas
 	</h1>
 	<p>
-		Este gráfico mostra dados de maio de 2014 para habitantes e celulares ativos no Brasil (fontes: IBGE e ANATEL)
+		D3js Estudo
 	</p>
 </header>
 <section>
 	<div class="grafico1"></div>
 </section>
 <footer>
-	Este é um gráfico realm mas para estudar D3JS então a cada commit novas e belas mudanças :D
 </footer>
 <script src="d3.min.js"></script>
 <script>
@@ -60,22 +59,34 @@
 					return barHeight + "px";
 				});
 
+		// d3.select(".grafico1").selectAll("bar")
+		// .data(data)
+		// .enter()
+		// 	.append("text")
+  //   	.attr("class", "text-item")
+		// 	.text(function (d) {return d.item;});
 
-			d3.select(".grafico1").selectAll("numeros")
-			   .data(data)
-			   .enter()
-			   .append("numeros")
-			   .text(function(d) {
-			   		return d.value;
-			   });
+		d3.select(".grafico1").selectAll("bar")
+	   .data(data)
+	   .enter()
+	   .append("text")
 
-			d3.select(".grafico1").selectAll("item")
-			   .data(data)
-			   .enter()
-			   .append("item")
-			   .text(function(d) {
-			   		return d.item;
-			   });
+
+			// d3.select(".grafico1").selectAll("numeros")
+			//    .data(data)
+			//    .enter()
+			//    .append("numeros")
+			//    .text(function(d) {
+			//    		return d.value;
+			//    });
+
+			// d3.select(".grafico1").selectAll("item")
+			//    .data(data)
+			//    .enter()
+			//    .append("item")
+			//    .text(function(d) {
+			//    		return d.item;
+			//    });
 	});
 </script>
 </body>
