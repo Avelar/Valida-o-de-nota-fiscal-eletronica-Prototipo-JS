@@ -1,9 +1,12 @@
-/*==============================================
+/*****************************
  *  =Ave SASS tests
- *==============================================/
+ *****************************/
 
-@import "compass";
+
+@import "core/typography";
 
 body {
-  background: #ff2;
+  background: #ffffff;
+  font-size: 1em;
+  font-family: sans-serif;
 }

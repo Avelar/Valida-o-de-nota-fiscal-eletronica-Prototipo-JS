@@ -1,0 +1,11 @@
+/*****************************
+ *  =Ave SASS tests
+ *****************************/
+.error {
+  background: #bf3605;
+  color: white; }
+
+body {
+  background: #ffffff;
+  font-size: 1em;
+  font-family: sans-serif; }
