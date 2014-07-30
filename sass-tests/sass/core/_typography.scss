@@ -1,0 +1,44 @@
+body {
+  font: normal normal normal 
+  #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} sans-serif;
+  font-family: "helvetica neue";
+}
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol, dl { margin-bottom: 1.5em; }
+
+p { margin-bottom: 1.5em; }
+
+/*********************************************************************
+*  =Headers
+********************************************************************
+
+h1 {
+  font-size: em(58px, $PROJECT_FONT_SIZE);
+  font-weight: normal;
+  line-height: em(63px, 58px);
+  margin-bottom: em(32px, 58px);
+}
+
+h2 {
+  font-size: em(34px, $PROJECT_FONT_SIZE);
+  font-weight: normal;
+  line-height: em(34px, 34px);
+  margin-bottom: em(26px, 34px);
+  padding-top: em(16px, 34px);
+}
+
+h3 {
+  font-size: em(22px);
+  line-height: em(26px, 22px);
+  margin-bottom: em(26px, 22px);
+  padding-top: em(8px, 22px);
+  font-weight: normal;
+}*/

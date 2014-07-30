@@ -1,0 +1,24 @@
+// Variáveis
+
+/*********************************************************************
+*  =Grid and typography
+*********************************************************************/
+$PROJECT_FONT_SIZE : 16px !default;
+$PROJECT_BASELINE : 24px !default;
+
+$GRID_COLUMN_WIDTH : 65px !default;
+$GRID_GUTTER : 20px !default;
+
+/*********************************************************************
+*  =Colors
+*********************************************************************/
+
+$TEXT_COLOR : #555 !default;
+$LINK_COLOR : #37b2c0 !default;
+$SELECTION_BACKGROUND_COLOR: #41bdce !default;
+$SELECTION_TEXT_COLOR: #fff !default;
+$PLACEHOLDER_COLOR: #a7a9ac !default;
+
+//Erros
+$ERROR-BG: #bf3605;
+$ERROR-FG: #fff;
