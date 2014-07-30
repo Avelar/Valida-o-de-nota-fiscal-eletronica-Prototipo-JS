@@ -1,0 +1,358 @@
+@import "compass"; // disponibiliza funções e mixins do Compass
+
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+
+/*********************************************************************
+*  =Comentários
+*
+*  Este, e todos os comentários dos tópicos aparecerão por padrão.
+*********************************************************************/
+
+/* Este comentário vai aparecer */
+// Este comentário não vai aparecer no arquivo final
+
+/*********************************************************************
+*  =Seletores aninhados
+*********************************************************************/
+
+// Evitar ao máximo seletores aninhados
+// Exceções: classes modificadores, pseudo-elements, pseudo-seletores
+
+.go-to-next-page {
+  text-decoration: underline;
+
+  &:hover { text-decoration: none; }
+  &:before { content: "This is a link: "; }
+
+  .lt-ie8 & {
+    display: inline-block;
+    padding: 1em;
+  }
+}
+
+/*********************************************************************
+*  =Regras aninhadas
+*********************************************************************/
+
+.element1 { background: #f0f; }
+.element2 { background: #f00; }
+.element3 { background: #0f0; }
+
+// .element2 {
+//   margin: 12px 20px 24px 0;
+// }
+
+// .element2 {
+//   margin-top: 12px;
+//   margin-right: 20px;
+//   margin-bottom: 24px;
+//   margin-left: 0;
+// }
+
+.element2 {
+  margin: {
+    top: 12px;
+    right: 20px;
+    bottom: 24px;
+    left: 0;
+  }
+}
+
+/*********************************************************************
+*  =Variáveis
+*********************************************************************/
+
+$sales_color: #f00;
+$outofstock_color: #00f;
+$columns_quantity: 6;
+
+.variable {
+  background: #ccc;
+  float: left;
+  width: 100%/$columns_quantity;
+}
+
+.variable-foo {
+  background: $sales_color;
+}
+
+.variable-bar {
+  background: $outofstock_color;
+}
+
+$myscopevar: black;
+
+.outer-scope {
+  $myscopevar: red;
+
+  color: $myscopevar; // red
+
+  .inner-scope {
+    $myscopevar: pink;
+
+    color: $myscopevar; // pink
+  }
+
+  .another-inner-scope {
+    color: $myscopevar; // pink. Vai entender.
+  }
+}
+
+/*********************************************************************
+*  =Operações
+*********************************************************************/
+
+.operations {
+  font-size: 8px + 8px;
+  width: (100%/4);
+
+  &::before {
+    content: "This is my " + "text: ";
+  }
+}
+
+/*********************************************************************
+*  =Interpolação
+*********************************************************************/
+
+$myclassname: "foo";
+$myfontsize: 18px;
+$mylineheight: 24px;
+
+.myclassname-#{$myclassname} {
+  color: black;
+  content: "#{$myclassname}";
+  font: normal normal #{$myfontsize}/#{$mylineheight} serif;
+}
+
+/*********************************************************************
+*  =Funções pré-definidas do SASS
+*********************************************************************/
+
+.color-functions {
+  $link-color: #008ad2;
+
+  background: #ffc600;
+
+  a {
+    color: $link-color;
+
+    &:hover {
+      color: lighten($link-color, 10%);
+    }
+
+    &:active {
+      color: darken($link-color, 10%);
+    }
+  }
+}
+
+.color-functions-lighten {
+  background: lighten(#ffc600, 20%);
+}
+
+.color-functions-darken {
+  background: darken(#ffc600, 20%);
+}
+
+.color-functions-hue {
+  background: adjust-hue(#ffc600, 180);
+}
+
+/*********************************************************************
+*  =@import
+*********************************************************************/
+
+@import "modules/module_vanilla.css"; // nativo do CSS, vai fazer uma requisição extra
+@import "modules/module_full"; // funciona, mas como não é partial vai ser compilado separadamente também
+@import "modules/module_partial"; // geralmente é o que queremos
+
+/*********************************************************************
+*  =@media
+*********************************************************************/
+
+@media screen and (max-width: 700px) {
+  body {
+    background: #f00;
+  }
+}
+
+.responsive-module {
+  background: #f00;
+
+  @media screen and (max-width: 600px) {
+    background: #f00;
+
+    .foo {
+      font-size: 24px;
+    }
+  }
+}
+
+/*********************************************************************
+*  =@extend
+*********************************************************************/
+
+%error {
+  background: lighten(#f00, 20%);
+  color: #fff;
+  padding: 1em;
+}
+
+.really-serious-error {
+  @extend %error;
+  font-size: 24px;
+}
+
+.really-really-serious-error {
+  @extend %error;
+  font-size: 32px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background: #ddd;
+  margin-right: 10px;
+}
+
+.item-container {
+  @include background(linear-gradient(top left, #333, #0c0));
+  @extend %clearfix;
+  background-image: linear-gradient(top left, #333, #0c0);
+}
+
+%clearfix {
+  &:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  zoom: 1;
+}
+
+/*********************************************************************
+*  =@mixin
+*********************************************************************/
+
+@mixin mymixin($background-color: #cc0) {
+  background: $background-color;
+  margin: 3em;
+  padding: 3em;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000;
+}
+
+.mixin-element {
+  @include mymixin(orange);
+}
+
+.another-mixin-element {
+  @include mymixin(black);
+}
+
+@mixin colorful-links($color) {
+  @include single-transition(color, .1s, ease-out);
+  color: $color;
+
+  &:visited { color: $color; }
+  &:hover   { color: invert($color); }
+  &:active  { color: adjust-color($color, $lightness: -5%); }
+}
+
+.colorful-span {
+  @include colorful-links(orange);
+}
+
+.another-colorful-span {
+  @include colorful-links(fuchsia);
+}
+
+/*********************************************************************
+*  =Funções customizadas
+*********************************************************************/
+
+@function myfunction() {
+  @return 10px + 10px;
+}
+
+@function remove-unit($number) {
+  $unit: unit($number);
+  $one: 1;
+
+  @if $unit == "px" { $one: 1px; }
+  @if $unit == "em" { $one: 1em; }
+  @if $unit == "%"  { $one: 1%;  }
+
+  @return $number / $one;
+}
+
+@function flex($target, $context, $unit: "em") {
+  $size: remove-unit($target) / remove-unit($context);
+
+  @if $unit == "em" { @return #{$size}em; }
+  @if $unit == "%" { @return percentage($size); }
+}
+
+// Alias to `flex` function, using `%` as format.
+@function perc($target, $context) {
+  @return flex($target, $context, "%");
+}
+
+// Alias to `flex` function, using `em` as format.
+@function em($target, $context: 16) {
+  @return flex($target, $context, "em");
+}
+
+.my-title {
+  font-size: em(18px);
+  width: perc(200px, 1000px);
+}
+
+/*********************************************************************
+*  =Sprites
+*********************************************************************/
+
+$icons-sprite-map: sprite-map("icons/*.png");
+
+.categories-list {
+  list-style: outside none;
+}
+
+.category {
+  margin-bottom: 16px;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-image: sprite-url($icons-sprite-map);
+    margin-right: 4px;
+  }
+}
+
+.category-ruby:before {
+  background-position: sprite-position($icons-sprite-map, ruby);
+//   background: sprite($icons-sprite-map, ruby);
+}
+
+.category-js:before {
+  background-position: sprite-position($icons-sprite-map, js);
+}
+
+/*********************************************************************
+*  =Inline images
+*********************************************************************/
+
+body {
+  padding-bottom: 100px;
+  background: inline-image("inline/straws.png") repeat;
+}
