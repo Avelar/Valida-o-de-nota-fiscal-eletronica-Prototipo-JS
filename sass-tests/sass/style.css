@@ -81,27 +81,23 @@ p {
 
 /*********************************************************************
 *  =Headers
-********************************************************************
-
+********************************************************************/
 h1 {
-  font-size: em(58px, $PROJECT_FONT_SIZE);
+  font-size: em(58px, 16px);
   font-weight: normal;
   line-height: em(63px, 58px);
-  margin-bottom: em(32px, 58px);
-}
+  margin-bottom: em(32px, 58px); }
 
 h2 {
-  font-size: em(34px, $PROJECT_FONT_SIZE);
+  font-size: em(34px, 16px);
   font-weight: normal;
   line-height: em(34px, 34px);
   margin-bottom: em(26px, 34px);
-  padding-top: em(16px, 34px);
-}
+  padding-top: em(16px, 34px); }
 
 h3 {
   font-size: em(22px);
   line-height: em(26px, 22px);
   margin-bottom: em(26px, 22px);
   padding-top: em(8px, 22px);
-  font-weight: normal;
-}*/
+  font-weight: normal; }
