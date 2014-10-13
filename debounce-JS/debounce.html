@@ -10,7 +10,7 @@
         var timeout;
 
         var buttonClick = function (args) {
-           console.log("clicou");
+           console.log("clicou debounce");
         };
 
         return function() {
@@ -22,11 +22,34 @@
         }, timeWindow);
         };
       }());
+
+      //Throttle
+      // var buttonClickB = (function () {
+      //   'use strict';
+
+      //   var timeWindow = 300; // time in ms
+      //   var lastExecution = new Date((new Date()).getTime() - timeWindow);
+
+      //   var buttonClickB = function (args) {
+      //   };
+
+      //   return function () {
+      //     if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
+      //       lastExecution = new Date();
+      //       return buttonClickB.apply(this, arguments);
+      //     }
+      //   };
+      // }());
   </script>
   </head>
   <body>
-  <!-- Abra co console e verifique que sómente de 300 em 300 mile segundos vai ser disparado um novo clique -->
-    <input name="btn" onclick="buttonClick();" type="submit" value="Enviar" />
+    <p>
+      <h3>Debounce</h3>
+      <input name="btn" onclick="buttonClick();" type="submit" value="Enviar" />
+    </p>
+    <!-- <p>
+      <h3>Throttle</h3>
+    </p> -->
   </body>
 </html>
 
