@@ -1,0 +1,36 @@
+﻿<!DOCUMENT html>
+<html>
+  <head>
+  <script type="text/javascript">
+      //debounce
+      var buttonClick = (function () {
+        'use strict';
+
+        var timeWindow = 300; // time in ms
+        var timeout;
+
+        var buttonClick = function (args) {
+           console.log("clicou");
+        };
+
+        return function() {
+          var context = this;
+        var args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+          buttonClick.apply(context, args);
+        }, timeWindow);
+        };
+      }());
+  </script>
+  </head>
+  <body>
+  <!-- Abra co console e verifique que sómente de 300 em 300 mile segundos vai ser disparado um novo clique -->
+    <input name="btn" onclick="buttonClick();" type="submit" value="Enviar" />
+  </body>
+</html>
+
+
+
+
+
