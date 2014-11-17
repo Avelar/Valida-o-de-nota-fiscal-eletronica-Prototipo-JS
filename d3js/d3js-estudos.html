@@ -1,64 +1,44 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Celulares x População no Brasil</title>
+<title>D3.js</title>
 <head>
-	<style>
-		body {
-			font: 1em/1.5 sans-serif;
-			font-weight: normal;
-		}
-
-		.grafico1 {
-			width: 800px;
-			height: 400px;
-			border: 1px solid #f4f4f4;
-			margin: 0 auto;
-		}
-	</style>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+<link href='assets/stylesheets/style.css' rel='stylesheet' type='text/css'>
+<!-- <script type="text/javascript" src="assets/javascripts/d3.min.js"></script> -->
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="grafico1"></div>
-<script src="d3.min.js"></script>
-	<script type="text/javascript">
-		
-			// Estudo 02 - dados estáticos com CSS
-			var dataset = [ 25, 7, 5, 26, 11];
-			
-			d3.select("body").selectAll("div")
-				.data(dataset)
-				.enter()
-				.append("div")
-				.attr("class", "bar")
-				.style("height", function(d) {
-					var barHeight = d * 5;
-					return barHeight + "px";
-				});
-			
+<header class="title">
+	<h1></h1>
+	<h2 class="subtitle"></h2>
 
-			// Estudo 01 - criar cavas SVG, selecionar dados.CSV, e criar elementos e estilos SVG com d3.js.CSV
-				var canvas = d3.select(".grafico1").append("svg")
+</header>
+<section>
+</section>
+<script type="text/javascript">
+	d3.select(".title h1")
+		.text("Estudos d3.js");
+	d3.select(".subtitle")
+		.text("exemplos de Scott Murray");
 
-				d3.csv("g1_data.csv", function(data) {
-					canvas.selectAll("rect")
-					.data(data)
-					.enter()
-						.append("rect")
-			    	.attr("class", "bar")
-						.attr("width", function (d) {return d.value;})
-						.attr("height", 40)
-						.attr("fill", "#185daa")
-						.attr("y", function (d,i) {return i * 50;})
 
-					canvas.selectAll("text")
-					.data(data)
-					.enter()
-						.append("text")
-						.attr("width", 50)
-						.attr("fill", "#ffffff")
-						.attr("y", function (d,i) {return i * 50 + 20;})
-						.text(function (d) {return d.item;})
-				});
+ 	var dataset = [ 5, 10, 15, 20, 25 ];
+	// var dataset = [];                        //Initialize empty array
+	// for (var i = 0; i < 25; i++) {           //Loop 25 times
+	// 	var newNumber = Math.random() * 30;  //New random number (0-30)
+	// 	dataset.push(newNumber);             //Add new number to array
+	// }
 
-				console.log(d3) /* Para saber a versão do D3js que estou usando*/
-		</script>
+	d3.select("body").selectAll("p")
+		.data(dataset)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+			var barHeight = d * 5;  //Scale up by factor of 5
+			return barHeight + "px";
+		});
+
+</script>
 </body>
+</html>
