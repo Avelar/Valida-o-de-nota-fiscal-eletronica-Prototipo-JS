@@ -2,10 +2,29 @@
 <meta charset="utf-8">
 <title>D3.js SVG</title>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
 <link href='assets/stylesheets/style.css' rel='stylesheet' type='text/css'>
-<!-- <script type="text/javascript" src="assets/javascripts/d3.min.js"></script> -->
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="assets/javascripts/d3.min.js"></script>
+<style>
+section,
+.chart {
+  width: 100%;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px;
+  text-anchor: top;
+}
+
+</style>
 </head>
 <body>
 <header class="title">
@@ -14,64 +33,72 @@
 
 </header>
 <section>
+  <div class="chart"></div>
 </section>
-<script type="text/javascript">
-	d3.select(".title h1")
-		.text("Estudos D3.js SVG");
-	d3.select(".subtitle")
-		.text("exemplos de Scott Murray");
+<script>
 
-			
-		//Width and height
-			var w = 500;
-			var h = 100;
-			var barPadding = 1;
-			
-			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
-			
-			//Create SVG element
-			var svg = d3.select("body")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-			svg.selectAll("rect")
-			   .data(dataset)
-			   .enter()
-			   .append("rect")
-			   .attr("x", function(d, i) {
-			   		return i * (w / dataset.length);
-			   })
-			   .attr("y", function(d) {
-			   		return h - (d * 4);
-			   })
-			   .attr("width", w / dataset.length - barPadding)
-			   .attr("height", function(d) {
-			   		return d * 4;
-			   })
-			   .attr("fill", function(d) {
-					return "rgb(0, 0, " + (d * 10) + ")";
-			   });
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
 
-			svg.selectAll("text")
-			   .data(dataset)
-			   .enter()
-			   .append("text")
-			   .text(function(d) {
-			   		return d;
-			   })
-			   .attr("text-anchor", "middle")
-			   .attr("x", function(d, i) {
-			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-			   })
-			   .attr("y", function(d) {
-			   		return h - (d * 4) + 14;
-			   })
-			   .attr("font-family", "sans-serif")
-			   .attr("font-size", "11px")
-			   .attr("fill", "white");
+var y = d3.scale.linear()
+    .range([height, 0]);
 
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(d3.time.minutes, 15);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data.tsv", type, function(error, data) {
+  x.domain(data.map(function(d) { return d.year; }));
+  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Tempo");
+
+  var bar = svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.year); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); });
+
+  bar.append("text")
+    .text(function(d) { return d.value; });
+
+});
+
+function type(d) {
+  d.value = +d.value;
+  return d;
+}
 
 </script>
 </body>
