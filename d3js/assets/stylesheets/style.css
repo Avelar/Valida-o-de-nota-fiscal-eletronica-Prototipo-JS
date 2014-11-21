@@ -1,5 +1,5 @@
 body {
-	font: 1.3em/1.8 'Lato', sans-serif;
+	font: 1em/1.8 'Lato', sans-serif;
 	font-weight: 300;
 	color: #37444a;
 }
@@ -9,6 +9,11 @@ footer,
 section,
 .grafico1 {
 	width: 800px;
+	margin: 0 auto;
+}
+
+.data-content {
+	max-width: 1024px;
 	margin: 0 auto;
 }
 
