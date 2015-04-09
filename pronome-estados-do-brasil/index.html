@@ -30,7 +30,7 @@
     // Para páginas dinâmicas com nome dos estados Brasileiros, subistitui os pronomes em, no, na...
     // Exemplo em Bahia por na Bahia
 
-    // JEITO 01  DE FAZER:
+    // JEITO 01:
     // Encontrei em uma busca no google e adaptei
     // $('#estados').contents().filter(function() {
     //         return this.nodeType == 3
@@ -42,7 +42,7 @@
     //         this.textContent = this.textContent.replace(/em mato grosso do sul/gi, 'no Mato Grosso do Sul');
     //     });
 
-    // jeito 3 de deletar um texto
+    // Jeito 02:
     // Encontrei em uma busca no google e adaptei
     // $(function () {
     //     $(".testes:contains('DeleteTexta')").contents().filter(function () {
@@ -51,7 +51,7 @@
     // });
 
 
-    // JEITO Que escolhi FAZER:
+    // JEITO 03:
     // gi => g:global e i:case sensitive
     var stateReplace = {
       'na Bahia': /em bahia/gi,
