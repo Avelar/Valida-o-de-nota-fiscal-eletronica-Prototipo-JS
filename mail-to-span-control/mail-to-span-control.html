@@ -9,6 +9,43 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Previne robot mailto span</title>
+		<style type="text/css">
+			/* apply a natural box layout model to all elements, but allowing components to change 
+			 * Paul Irish Box-sizing Border-box
+			 */
+			html {
+			  box-sizing: border-box;
+			}
+			*, *:before, *:after {
+			  box-sizing: inherit;
+			}
+			body {
+				background: #252527;
+				font-family: sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				text-decoration: none; 
+			}
+			.btn {
+				color: #ddcb8c;
+				border: 2px solid #ddcb8c;
+				padding: 10px;
+				text-transform: uppercase;
+				display: inline-block;
+				position: absolute;
+				/*align center of page responsiiive*/
+				top: 50%;
+				left: 50%;
+				margin-right: -50%;
+				transform: translate(-50%, -50%);
+			}
+			.btn:hover {
+				color: #fff;
+				border: 2px solid #fff;
+			}
+		</style>
 	</head>
 	<body>
 
