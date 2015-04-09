@@ -12,15 +12,15 @@
 	</head>
 	<body>
 
-		<a class="btn" href='javascript:semSpam("fortunato.avelar", "gmail.com")' title="Open your default client for e-mail, and send a message to me">
+		<a class="btn" href='javascript:spamControl("fortunato.avelar", "gmail.com")' title="Open your default client for e-mail, and send a message to me">
 		Vamos conversar, envie um email
 		</a>
 
 		<script type="text/javascript">
-			//email spam control
-			function semSpam(usuario,domino) {
-				locationstring = 'mailto:' + usuario + '@' + domino;
-				window.location = locationstring;
+			// email spam control
+			function spamControl(usuario,domino) {
+				getString = 'mailto:' + usuario + '@' + domino;
+				window.location = getString;
 			}
 		</script>
 	</body>
