@@ -1,5 +1,3 @@
 #sandbox
 
-for cats!
-
-My personal and test projects
+Personal projects and tests
