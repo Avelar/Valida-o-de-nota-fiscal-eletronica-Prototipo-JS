@@ -1,16 +1,99 @@
 ﻿<!DOCUMENT html>
 <html>
 <head>
-<title>Validação de Nota fiscal eletrônica com javaScript</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="invoice-validation.js"></script>
-<script type="text/javascript">
-
-</script>
+<title>Validação de Nota fiscal eletrônica com javaScript (para testes)</title>
+<style>
+	.flash-message-error {
+		display: none;
+	}
+</style>
 </head>
 <body>
-    <form class="" id="form-invoice" action="">
+  <form class="" id="form-invoice" action="">
+		<input class="nf_number inputs a1" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a2" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a3" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a4" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a5" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a6" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a7" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a8" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a9" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a10" type="text" maxlength="4" />
+		<input class="nf_number inputs" id="a11" type="text" maxlength="4" />
+  </form>
 
-    </form>
+  <div class="flash-message-error">Sua nota fiscal não é válida</div>
+
+  <a href="#" class="btn validate-invoice">Validar</a>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+	    $(".nf_number").keyup(function () {
+	      if (this.value.length == this.maxLength) {
+	        $(this).next(".nf_number").focus();
+	        teste(this.val());
+	      }
+	    });
+
+	    $(".validate-invoice").on("click", function(e){
+	      if(estadosNF() && yearNF() && monthNF() && modelNF()) {
+	        $(".flash-message-error").hide();
+	        return true;
+	      } else {
+	        $(".flash-message-error").show();
+	        e.preventDefault();
+	      }
+	    });
+
+	    // verifica se nota contem ESTADOS brasileiros
+	    // estadosNF = estados Nota Fiscal
+	    function estadosNF(e) {
+	      var a = new Array("11", "12", "13", "14", "15", "16", "17", "21", "22", "23", "24", "25", "26", "27", "28", "29", "31", "32", "33", "35", "41", "42", "43", "50", "51", "52", "53");
+	      var sval = $(".a1").val();
+	      var ps = sval.substring(0,2);
+
+	      if ($.inArray(ps,a) > -1){
+	          return true;
+	        } else {
+	          return false;
+	        }
+	      }
+
+	    // verifica se nota tem ANO correto
+	    // yearNF = Ano Nota Fiscal
+	    function yearNF() {
+	      var b = $(".a1").val().substring(2,4);
+	      if(b == '12' || b == '13' || b == '14') {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    }
+
+	    // verifica se nota tem MÊS correto
+	    // monthNF = Mês Nota Fiscal
+	    function monthNF() {
+	      var c = $("#a2").val().substring(0,2);
+	      if(c == '01' || c == '02' || c == '03' || c == '04' || c == '05' || c == '06' || c == '07' || c == '08' || c == '09' || c == '10' || c == '11' || c == '12') {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    }
+
+	    // verifica se nota tem o Modelo do documento correto
+	    // modelNF = Model NF
+	    function modelNF() {
+	      var d = $("#a6").val().substring(0,2);
+	      if(d == '55' || d == '04' || d == '01') {
+	        return true;
+	      } else {
+	        return false;
+	      }
+	    }    
+	  });
+	</script>
 </body>
 </html>
