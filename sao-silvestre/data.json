@@ -1,0 +1,35 @@
+{
+ "name": "data",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "Brasil",
+     "children": [
+      {"name": "masculino", "size": 29},
+      {"name": "Feminino", "size": 5}
+     ]
+    },
+    {
+     "name": "America do Norte",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 1},
+      {"name": "LinkDistance", "size": 1},
+      {"name": "MaxFlowMinCut", "size": 1},
+      {"name": "ShortestPaths", "size": 1},
+      {"name": "SpanningTree", "size": 1}
+     ]
+    },
+    {
+     "name": "Europa",
+     "children": [
+      {"name": "Espanha", "size": 1},
+      {"name": "Inglaterra", "size": 1}
+     ]
+    }
+   ]
+  },
+    {"name": "teste", "size": 1}
+ ]
+}
