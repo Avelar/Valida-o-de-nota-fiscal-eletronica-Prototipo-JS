@@ -5,31 +5,63 @@
    "name": "analytics",
    "children": [
     {
-     "name": "Brasil",
+     "name": "America do Sul",
      "children": [
-      {"name": "masculino", "size": 29},
-      {"name": "Feminino", "size": 5}
+      {"name": "Brasil", "size": 34},
+      {"name": "Colômbia", "size": 6},
+      {"name": "Equador", "size": 6},
+      {"name": "Argentina", "size": 3},
+      {"name": "Chile", "size": 2},
+      {"name": "Uruguai", "size": 1}
+     ]
+    },
+    {
+     "name": "America do central",
+     "children": [
+      {"name": "Costa Rica", "size": 1},
+      {"name": "México", "size": 8}
      ]
     },
     {
      "name": "America do Norte",
      "children": [
-      {"name": "BetweennessCentrality", "size": 1},
-      {"name": "LinkDistance", "size": 1},
-      {"name": "MaxFlowMinCut", "size": 1},
-      {"name": "ShortestPaths", "size": 1},
-      {"name": "SpanningTree", "size": 1}
+      {"name": "Estados Unidos", "size": 4}
+     ]
+    },
+    {
+     "name": "Africa",
+     "children": [
+      {"name": "Quênia", "size": 25},
+      {"name": "Etiópia", "size": 6}
+     ]
+    },
+    {
+     "name": "Ásia",
+     "children": [
+      {"name": "Estados Unidos", "size": 4}
+     ]
+    },
+    {
+     "name": "Oceania",
+     "children": [
+      {"name": "Estados Unidos", "size": 4}
      ]
     },
     {
      "name": "Europa",
      "children": [
+      {"name": "Alemanha", "size": 1},
+      {"name": "Bélgica", "size": 6},
       {"name": "Espanha", "size": 1},
-      {"name": "Inglaterra", "size": 1}
+      {"name": "França", "size": 2},
+      {"name": "Finlândia", "size": 1},
+      {"name": "Iugoslávia", "size": 3},
+      {"name": "Itália", "size": 2},
+      {"name": "Portugal", "size": 11},
+      {"name": "Reino Unido", "size": 2}
      ]
     }
    ]
-  },
-    {"name": "teste", "size": 1}
- ]
+  }
+]
 }

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <style type="text/css" src="assets/stylesheet/aplication.css"></style>
+    <style type="text/css" src="assets/stylesheets/application.css"></style>
     <script type="text/javascript" src="assets/javascript/d3.min.js"></script>
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script-->
   </head>
@@ -8,9 +8,9 @@
   
   </body>
   <script type="text/javascript">
-    var diameter = 960,
+    var diameter = 550,
         format = d3.format(",d"),
-        color = d3.scale.category20c();
+        color = d3.scale.category20c();// encontra um outro formato de cores ou bg
 
     var bubble = d3.layout.pack()
         .sort(null)
