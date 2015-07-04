@@ -1,11 +1,9 @@
 <body>
   <head>
-    <title> Post pege sample - medium style inspiration </title>
+    <title> Post pege sample with full first section</title>
     <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700|Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
 
   <style>
-    /*@import url(http://fonts.googleapis.com/css?family=Quattrocento:400,700|Quattrocento+Sans:400,700);*/
-
     body {
       font-family: 'Quattrocento Sans', sans-serif;
       margin:0;
@@ -20,20 +18,15 @@
       background-attachment:fixed; /* Fixed Background Image good scroll sensation*/
       display:block;
       margin-bottom:5em;
-      min-height:800px;
+      height: 100vh; /* It makes section screen full */
       z-index:1;
     }
 
-    .header:before{
-      background:rgba(0,0,0,.1); /* degrade from top to bottom, on the image*/
-      bottom:0;
-      content:" ";
-      display:block;
-      height:800px;
-      left:0;
-      position:absolute;
-      right:0;
-      top:0;
+
+    /* Another styles */
+
+    .link {
+      color: #ffffff;
     }
 
     .header {
@@ -90,9 +83,10 @@
         Post pege
       </h1>
       <p>
-        Medium style inspiration <3
-        <br />
-        foto: by Ali Veiga
+        foto: by 
+        <a class="link" href="https://www.flickr.com/photos/aliveiga/5057066939/" target="_blank">
+          Ali Veiga
+        </a>
       </p>
     </div>
   </section>
