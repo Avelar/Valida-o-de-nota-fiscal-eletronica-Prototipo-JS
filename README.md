@@ -1,6 +1,6 @@
 ## Validação de nota fiscal eletrônica [Protótipo JS]
 
-Protótipo que valida NF-e em JS, com o objetivo de pesquisa e inspiração para time de back-end.
+Protótipo de 2015 que valida NF-e em javaScript, com o objetivo de pesquisa/estudo.
 
 ### Conceito - como é construida a NF-e:
 
@@ -16,5 +16,5 @@ O pensamento aqui foi estudar o conceito e pensar em uma solução de validaçã
 - Código numérico: 8 
 - Dígito verificador: 1   
 
-Esta versão valida os campos: UF, ano, mês e modelo. O código está comentado.
+Esta versão valida os campos: UF, ano, mês e modelo.
 
